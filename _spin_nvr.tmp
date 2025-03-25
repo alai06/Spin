@@ -1,0 +1,11 @@
+never exo4 {    /* !([] ((! ((state==YELLOW))) || (<> ((state==RED))))) */
+T0_init:
+	do
+	:: (! ((! ((state==YELLOW)))) && ! (((state==RED)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((state==RED)))) -> goto accept_S4
+	od;
+}
